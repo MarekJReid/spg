@@ -8,6 +8,7 @@
 
 import React, { useState, useLayoutEffect } from "react";
 import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./src/components/global/GlobalStyles";
 import Theme from "./src/components/global/variables";
 
 function useWindowSize() {
@@ -29,7 +30,7 @@ const App = ({ element }) => {
   return (
     <ThemeProvider
       theme={width < 1200 ? Theme.theme.mobile : Theme.theme.desktop}
-    >
+    ><GlobalStyle/>
       {element}
     </ThemeProvider>
   );
